@@ -19,3 +19,6 @@ AGENTS.md
 *.pfx
 *.tmp
 *.tmpdir
+
+# local release artifacts
+release/

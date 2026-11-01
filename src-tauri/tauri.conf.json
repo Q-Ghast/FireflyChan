@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "FireflyChan",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "identifier": "com.fireflychan.desktop",
   "build": {
     "frontendDist": "../dist",
@@ -22,6 +22,11 @@
   "bundle": {
     "active": true,
     "targets": ["nsis"],
+    "publisher": "Q-Ghast",
+    "copyright": "Copyright © 2026 Q-Ghast",
+    "shortDescription": "流萤桌面 AI 截图助手",
+    "longDescription": "FireflyChan 是一个以流萤为主题的 Windows 桌面 AI 截图助手，支持截图问答、快捷提示词、联网搜索和可拖动桌宠。",
+    "license": "MIT",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

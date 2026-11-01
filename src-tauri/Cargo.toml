@@ -1,10 +1,10 @@
 [package]
 name = "fireflychan"
-version = "0.1.0"
+version = "1.0.0"
 description = "FireflyChan desktop AI screenshot companion"
-authors = ["FireflyChan"]
-license = ""
-repository = ""
+authors = ["Q-Ghast"]
+license = "MIT"
+repository = "https://github.com/Q-Ghast/FireflyChan"
 edition = "2021"
 rust-version = "1.90"
 
