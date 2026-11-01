@@ -1,0 +1,32 @@
+html,
+body,
+#root {
+  background: transparent;
+  overflow: hidden;
+}
+
+.pet-shell {
+  position: relative;
+  width: 114px;
+  height: 114px;
+  display: grid;
+  place-items: center;
+  cursor: grab;
+  -webkit-app-region: no-drag;
+  will-change: transform;
+  transform-origin: 50% 50%;
+}
+
+.pet-shell:active {
+  cursor: grabbing;
+}
+
+.pet-image {
+  width: 103px;
+  height: 103px;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 94%, transparent 100%);
+}

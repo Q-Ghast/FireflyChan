@@ -1,0 +1,94 @@
+:root {
+  color-scheme: dark;
+  --bg: #050f14;
+  --panel: #071a20;
+  --panel-2: #0a2229;
+  --panel-3: #0d2b33;
+  --accent: #5eead4;
+  --accent-2: #22d3ee;
+  --accent-3: #2dd4bf;
+  --accent-soft: #a7f3d0;
+  --text: #e8fffb;
+  --muted: #7fa9a4;
+  --border: rgba(94, 234, 212, 0.16);
+  --border-strong: rgba(94, 234, 212, 0.34);
+  --danger: #fb7185;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.42);
+
+  font-family: "Segoe UI Variable Text", "Segoe UI", "Microsoft YaHei UI",
+    "Microsoft YaHei", system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f3f3;
+  --panel: rgba(255, 255, 255, 0.68);
+  --panel-2: rgba(255, 255, 255, 0.78);
+  --panel-3: rgba(240, 244, 245, 0.82);
+  --accent: #0f8f80;
+  --accent-2: #0e7f99;
+  --accent-3: #0d9488;
+  --accent-soft: #ccfbf1;
+  --text: #1b1b1f;
+  --muted: #5c6a6d;
+  --border: rgba(0, 0, 0, 0.09);
+  --border-strong: rgba(15, 143, 128, 0.3);
+  --danger: #c42b1c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  background: transparent;
+  color: var(--text);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(94, 234, 212, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 234, 212, 0.34);
+}

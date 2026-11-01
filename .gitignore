@@ -1,0 +1,21 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+.m0/
+*.log
+
+# local agent/tooling files
+AGENTS.md
+.vscode/
+.idea/
+
+# local secrets and temporary files
+.env
+.env.*
+*.local
+*.pem
+*.key
+*.pfx
+*.tmp
+*.tmpdir

@@ -1,0 +1,245 @@
+html,
+body,
+#root {
+  background: transparent;
+  overflow: hidden;
+}
+
+.bubble-wrap {
+  padding: 8px 10px 14px 10px;
+}
+
+.bubble {
+  position: relative;
+  width: 100%;
+  padding: 10px 14px 12px;
+  border-radius: 16px 16px 16px 5px;
+  background:
+    linear-gradient(145deg, rgba(13, 43, 51, 0.97), rgba(6, 20, 25, 0.97));
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(34, 211, 238, 0.05) inset,
+    0 0 26px rgba(34, 211, 238, 0.08);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 13px;
+  animation: bubble-in 180ms ease-out;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    120% 100% at 100% 0%,
+    rgba(94, 234, 212, 0.11),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.bubble-wrap.side-left .bubble::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  bottom: -7px;
+  width: 13px;
+  height: 13px;
+  background: rgba(6, 20, 25, 0.97);
+  border-right: 1px solid rgba(94, 234, 212, 0.3);
+  border-bottom: 1px solid rgba(94, 234, 212, 0.3);
+  transform: rotate(45deg);
+}
+
+.bubble-wrap.side-right .bubble {
+  border-radius: 16px 16px 5px 16px;
+}
+
+.bubble-wrap.side-right .bubble::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -7px;
+  width: 13px;
+  height: 13px;
+  background: rgba(6, 20, 25, 0.97);
+  border-left: 1px solid rgba(94, 234, 212, 0.3);
+  border-bottom: 1px solid rgba(94, 234, 212, 0.3);
+  transform: rotate(45deg);
+}
+
+.bubble-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.bubble-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid rgba(94, 234, 212, 0.4);
+  background: #082028;
+}
+
+.bubble-tag {
+  margin-left: auto;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(127, 169, 164, 0.7);
+}
+
+.bubble-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 300px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 93%, transparent 100%);
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---- Light theme ---- */
+:root[data-theme="light"] .bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(246, 250, 250, 0.9)
+  );
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #1b1b1f;
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+:root[data-theme="light"] .bubble-title {
+  color: #0f8f80;
+}
+
+:root[data-theme="light"] .bubble-tag {
+  color: #8a9799;
+}
+
+:root[data-theme="light"] .bubble-avatar {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+:root[data-theme="light"] .bubble-wrap.side-left .bubble::after,
+:root[data-theme="light"] .bubble-wrap.side-right .bubble::after {
+  background: rgba(252, 253, 253, 0.92);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ---- Acrylic surface ---- */
+.bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(13, 43, 51, 0.58),
+    rgba(6, 20, 25, 0.5)
+  );
+  -webkit-backdrop-filter: blur(26px) saturate(125%);
+  backdrop-filter: blur(26px) saturate(125%);
+}
+
+.bubble-wrap.side-left .bubble::after {
+  background: rgba(7, 23, 28, 0.56);
+}
+
+.bubble-wrap.side-right .bubble::after {
+  background: rgba(7, 23, 28, 0.56);
+}
+
+:root[data-theme="light"] .bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(246, 250, 250, 0.54)
+  );
+}
+
+:root[data-theme="light"] .bubble-wrap.side-left .bubble::after,
+:root[data-theme="light"] .bubble-wrap.side-right .bubble::after {
+  background: rgba(250, 253, 253, 0.6);
+}
+
+/* ---- Acrylic readability pass ---- */
+.bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(13, 43, 51, 0.78),
+    rgba(6, 20, 25, 0.72)
+  );
+}
+
+.bubble-wrap.side-left .bubble::after,
+.bubble-wrap.side-right .bubble::after {
+  background: rgba(7, 23, 28, 0.74);
+}
+
+:root[data-theme="light"] .bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(246, 250, 250, 0.72)
+  );
+}
+
+:root[data-theme="light"] .bubble-wrap.side-left .bubble::after,
+:root[data-theme="light"] .bubble-wrap.side-right .bubble::after {
+  background: rgba(250, 253, 253, 0.76);
+}
+
+/* ---- Final acrylic tint (readable) ---- */
+.bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(13, 43, 51, 0.86),
+    rgba(6, 20, 25, 0.8)
+  );
+}
+
+.bubble-wrap.side-left .bubble::after,
+.bubble-wrap.side-right .bubble::after {
+  background: rgba(7, 23, 28, 0.82);
+}
+
+:root[data-theme="light"] .bubble {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.88),
+    rgba(246, 250, 250, 0.82)
+  );
+}
+
+:root[data-theme="light"] .bubble-wrap.side-left .bubble::after,
+:root[data-theme="light"] .bubble-wrap.side-right .bubble::after {
+  background: rgba(250, 253, 253, 0.84);
+}
+
+/* ---- Interactive bubble ---- */
+.bubble-wrap {
+  cursor: pointer;
+}
