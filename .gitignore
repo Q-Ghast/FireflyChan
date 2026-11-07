@@ -20,5 +20,5 @@ AGENTS.md
 *.tmp
 *.tmpdir
 
-# local release artifacts
-release/
+# Visual Studio local state
+.vs/
